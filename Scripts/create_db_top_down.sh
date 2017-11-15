@@ -1,5 +1,5 @@
 #!/bin/bash
-EXE=
+EXE=HACCKernels.thing.g++-7.2.0
 # Assumes 'databases' directory and measurements in 'measurements' directory
 # Need to Ajust -I argument
 
@@ -24,6 +24,8 @@ MEASUREMENTS+=" measurements/hpctoolkit-$EXE-measurements-STL_RES"
 hpcprof -S ${EXE}.hpcstruct -I ./"'+'" -o databases/hpctoolkit-$EXE-database-EXEC $MEASUREMENTS
 
 MEASUREMENTS=(measurements/hpctoolkit-$EXE-measurements-BRANCH)
+MEASUREMENTS+=" measurements/hpctoolkit-$EXE-measurements-BRANCH_PRED"
+MEASUREMENTS+=" measurements/hpctoolkit-$EXE-measurements-BRANCH_TAKEN"
 hpcprof -S ${EXE}.hpcstruct -I ./"'+'" -o databases/hpctoolkit-$EXE-database-BRANCH $MEASUREMENTS
 
 MEASUREMENTS=(measurements/hpctoolkit-$EXE-measurements-CACHE)
