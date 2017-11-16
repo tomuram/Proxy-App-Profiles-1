@@ -17,6 +17,7 @@ hpcprof -S ${EXE}.hpcstruct -I ./"'+'" -o databases/hpctoolkit-$EXE-database-TOP
 
 
 MEASUREMENTS=(measurements/hpctoolkit-$EXE-measurements-ISSUE_CYCLES)
+MEASUREMENTS+=" measurements/hpctoolkit-$EXE-measurements-TOT_CYCLES"
 hpcprof -S ${EXE}.hpcstruct -I ./"'+'" -o databases/hpctoolkit-$EXE-database-ISSUE $MEASUREMENTS
 
 MEASUREMENTS=(measurements/hpctoolkit-$EXE-measurements-EXE_CYCLES)
